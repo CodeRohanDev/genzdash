@@ -89,7 +89,7 @@ class _UsersPageState extends State<UsersPage> {
                       DataColumn(label: Text('Full Name')),
                       DataColumn(label: Text('Username')),
                       DataColumn(label: Text('Email')),
-                      DataColumn(label: Text('Verified')),
+                      DataColumn(label: Text('Email Verified')),
                     ],
                     rows: filteredUsers.map((user) {
                       return DataRow(
@@ -98,7 +98,8 @@ class _UsersPageState extends State<UsersPage> {
                           DataCell(Text(user['username'] ?? 'N/A')),
                           DataCell(Text(user['email'] ?? 'N/A')),
                           DataCell(
-                              Text(user['isVerified'] == true ? 'Yes' : 'No')),
+                            Text(user['isVerified'] == true ? 'Yes' : 'No'),
+                          ),
                         ],
                       );
                     }).toList(),
